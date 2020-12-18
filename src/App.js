@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Screen from './components/Screen';
+import Card from './components/Card';
 
 function App() {
-  return <Screen />;
+  return <Card />;
 }
 
 export default App;

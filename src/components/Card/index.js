@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-export default function Screen() {
+export default function Card() {
   const [screenStatus, setScreenStatus] = useState('System Off');
 
   const clickHandler = action => {
@@ -8,10 +8,10 @@ export default function Screen() {
   };
 
   return (
-    <>
-      <div>{screenStatus}</div>
-      <button onClick={() => clickHandler('switchon')}>Turn on</button>
-      <button onClick={() => clickHandler('switchoff')}>Turn off</button>
-    </>
+    <div className="card-container">
+      <div className="card"></div>
+      <div className="card"></div>
+      <div className="card"></div>
+    </div>
   );
 }
