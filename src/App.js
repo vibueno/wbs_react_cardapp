@@ -1,7 +1,6 @@
+import React, { useState } from 'react';
 import './App.css';
 import Card from './components/Card';
-
-import React, { useState } from 'react';
 
 export default function App() {
   const [pageTheme, setPageTheme] = useState('light');
