@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-export default function Card() {
-  const [screenStatus, setScreenStatus] = useState('System Off');
-
-  const clickHandler = action => {
-    if (action === 'switchon') setScreenStatus('System On');
-    else if (action === 'switchoff') setScreenStatus('System Off');
-  };
-
+import React from 'react';
+import './index.css';
+export default function Card({ title, img, alt }) {
   return (
-    <div className="card-container">
-      <div className="card"></div>
-      <div className="card"></div>
-      <div className="card"></div>
+    <div className="card">
+      <div className="card-title">{title}</div>
+      <div className="card-img-container">
+        <img src={`./img/${img}`} alt={`${alt}`} />
+      </div>
     </div>
   );
 }
