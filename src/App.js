@@ -4,20 +4,21 @@ import Card from './components/Card';
 
 export default function App() {
   const [welcomeMessage, setWelcomeMessage] = useState('');
-  const [pageTheme, setPageTheme] = useState('light');
-  const pageThemes = ['light', 'dark'];
+  const pageThemes = { light: 'bg-light', dark: 'bg-dark' };
+  const [pageTheme, setPageTheme] = useState(pageThemes['light']);
 
-  document.body.classList = `bg-${pageTheme}`;
+  document.body.classList = pageTheme;
 
   useEffect(() => {
     setWelcomeMessage('Happy 2021');
   }, []);
 
   const handleBtnClick = () => {
-    if (pageTheme === pageThemes[0]) setPageTheme(pageThemes[1]);
-    else setPageTheme(pageThemes[0]);
+    pageTheme === pageThemes.dark
+      ? setPageTheme(pageThemes.light)
+      : setPageTheme(pageThemes.dark);
 
-    document.body.classList = `bg-${pageTheme}`;
+    document.body.classList = pageTheme;
   };
 
   return (
